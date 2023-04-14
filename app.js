@@ -12,7 +12,7 @@ while (userInput !== "quit"){
     }
 
     //list todoList array
-    if (userInput === "list"){
+    else if (userInput === "list"){
         console.log("**********")
         for (i = 0; i < todoList.length; i++){
                 console.log(`${i}: ${todoList[i]}`);
@@ -21,8 +21,10 @@ while (userInput !== "quit"){
     }
 
     //delete items from todoList array
-    if (userInput === "delete"){
-        let deletedItem = parseInt(prompt())
+    else if (userInput === "delete"){
+        let deletedItem = parseInt(prompt("Enter the index of todo to delete"));
+        todoList.splice(deletedItem, 1);
+        console.log("Todo Removed");
     }
 
     userInput = prompt("What would you like to do?");
